@@ -25,6 +25,7 @@ jobs:
         env:
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          BIRTHDAYS_CSV_DATA: ${{ secrets.BIRTHDAYS_CSV_DATA }}
         run: |
           if [ -z "$MY_EMAIL" ]; then
             echo "MY_EMAIL secret is not set!"
