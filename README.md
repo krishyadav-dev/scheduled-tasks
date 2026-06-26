@@ -10,14 +10,14 @@ It is completely free, secure, and requires no local servers or credit cards!
 
 ```mermaid
 graph TD
-    A[GitHub Actions Cron Schedule] -->|Every day at 3:30 AM UTC| B(Write birthdays.csv from Secrets)
-    B --> C[Run main.py]
-    C --> D{Is someone's birthday today?}
-    D -->|Yes| E[Select random template from letter_templates/]
-    E --> F[Replace [NAME] with actual name]
-    F --> G[Log in to SMTP Server using Secrets]
-    G --> H[Send personalized birthday email]
-    D -->|No| I[Exit Script]
+    A["GitHub Actions Cron Schedule"] -->|Every day at 3:30 AM UTC| B("Write birthdays.csv from Secrets")
+    B --> C["Run main.py"]
+    C --> D{"Is someone's birthday today?"}
+    D -->|Yes| E["Select random template from letter_templates/"]
+    E --> F["Replace [NAME] with actual name"]
+    F --> G["Log in to SMTP Server using Secrets"]
+    G --> H["Send personalized birthday email"]
+    D -->|No| I["Exit Script"]
 ```
 
 1. **Scheduled Trigger**: GitHub Actions runs the workflow daily according to your set cron schedule.
