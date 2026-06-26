@@ -42,6 +42,14 @@ jobs:
             echo "MY_PASSWORD is configured"
           fi
 
+          if [ -z "$BIRTHDAYS_CSV_DATA" ]; then
+            echo "BIRTHDAYS_CSV_DATA secret is not set!"
+            echo "Go to Settings > Secrets > Actions and add it."
+            exit 1
+          else
+            echo "BIRTHDAYS_CSV_DATA is configured"
+          fi
+
           echo ""
           echo "All secrets are configured!"
 
@@ -60,13 +68,6 @@ jobs:
             echo "requirements.txt found"
           else
             echo "requirements.txt not found!"
-            exit 1
-          fi
-
-          if [ -f "birthdays.csv" ]; then
-            echo "birthdays.csv found"
-          else
-            echo "birthdays.csv not found!"
             exit 1
           fi
 
